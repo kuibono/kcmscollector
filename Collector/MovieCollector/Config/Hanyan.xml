@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MovieRule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>含烟影院最新更新</Name>
+  <SiteName>含烟影院</SiteName>
+  <IsMovie>false</IsMovie>
+  <IsSearchRule>false</IsSearchRule>
+  <UseTagAsClass>true</UseTagAsClass>
+  <UseLocationAsClass>true</UseLocationAsClass>
+  <DefaultClass>其他</DefaultClass>
+  <Encoding>gb2312</Encoding>
+  <ListPageUrl>http://www.hanyanyy.com/newshow.html</ListPageUrl>
+  <NextListRule>不需要(?&lt;key&gt;.*?)不许呀</NextListRule>
+  <ListInfoRule>&lt;span class="li2"&gt;&lt;a href="(?&lt;url&gt;.*?)" title=".*?" target="_blank"&gt;(?&lt;title&gt;.*?)&lt;/a&gt;&lt;/span&gt;</ListInfoRule>
+  <InfoRule>&gt;&lt;h2&gt;&lt;span&gt; 当前位置:&lt;/span&gt;&lt;a href='/'&gt;首页&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;raquo;&amp;nbsp;&amp;nbsp;&lt;a href='.*?' &gt;.*?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;raquo;&amp;nbsp;&amp;nbsp;&lt;a href='.*?'&gt;(?&lt;class&gt;.*?)&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;raquo;&amp;nbsp;&amp;nbsp;.*?&lt;/h2&gt;[\s\S]*?&lt;a href=".*?" class="imgA"&gt;&lt;img src="(?&lt;image&gt;.*?)" alt=".*?" onerror="src='/template/hanyan/images/nopic.gif'"/&gt;&lt;/a&gt;[\s\S]*?&lt;h1 class="fl"&gt;《(?&lt;title&gt;.*?)》[\s]*?&lt;small&gt;.*?&lt;/small&gt;[\s]*?&lt;/h1&gt;[\s\S]*?&lt;dd&gt;类型: &lt;a href="/.*?" target="_blank"&gt;(?&lt;class&gt;.*?)&lt;/a&gt; &lt;/dd&gt;[\s\S]*?&lt;dd&gt;地区: &lt;a href=".*?" target="_blank"&gt;(?&lt;location&gt;.*?)&lt;/a&gt;&lt;/dd&gt;[\s\S]*?&lt;div class="soytxt"&gt;.*?《.*?&lt;br&gt;[\s\S]*?&lt;p&gt;(?&lt;intro&gt;[\s\S]*?)&lt;/p&gt;</InfoRule>
+  <KuaibAreaRule />
+  <BaiduAreaRule>&lt;h2&gt;&lt;span&gt; 播放来源:百度影音&lt;/span&gt;(?&lt;key&gt;[\s\S]*?)&lt;/ul&gt;</BaiduAreaRule>
+  <KuaibDramaRule />
+  <BaiduDramaRule>&lt;li&gt;&lt;a title='.*?' href='(?&lt;playurl&gt;.*?)' target="_blank"&gt;(?&lt;title&gt;.*?)&lt;/a&gt;&lt;/li&gt;</BaiduDramaRule>
+  <DramaPageKuaibRule />
+  <DramaPageBaiduRule>&lt;!-- 百度影音播放器 --&gt;[\s]*?&lt;script type="text/javascript" src="(?&lt;source&gt;.*?)"&gt;&lt;/script&gt;&lt;script&gt;var param=getHtmlParas</DramaPageBaiduRule>
+  <SourceKuaibRule />
+  <SourceBaiduRule>{title}\$(?&lt;key&gt;.*?)\$bdhd</SourceBaiduRule>
+</MovieRule>
