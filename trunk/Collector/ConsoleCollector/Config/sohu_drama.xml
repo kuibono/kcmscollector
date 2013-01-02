@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MovieRule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>搜狐快播电视剧</Name>
+  <SiteName>搜狐快播</SiteName>
+  <IsMovie>true</IsMovie>
+  <IsSearchRule>false</IsSearchRule>
+  <UseTagAsClass>true</UseTagAsClass>
+  <UseLocationAsClass>false</UseLocationAsClass>
+  <DefaultClass>其他</DefaultClass>
+  <Encoding>utf-8</Encoding>
+  <ListPageUrl>http://kuaib.tv.sohu.com/html/more_list21.htm</ListPageUrl>
+  <NextListRule>&lt;a href='(?&lt;key&gt;[^'&lt;&gt;]*?)'&gt;下一页&lt;/a&gt;</NextListRule>
+  <ListInfoRule>&lt;div class="vPic"&gt;[\s\S]*?&lt;img src="(?&lt;image&gt;.*?)" width="120" height="165" alt="" /&gt;[\s\S]*?&lt;h4&gt;&lt;a href="(?&lt;url&gt;.*?)" target="_blank"&gt;(?&lt;title&gt;.*?)&lt;/a&gt;&lt;/h4&gt;[\s\S]*?&lt;p&gt;主演：&lt;font class="highlight"&gt;&lt;/font&gt;(?&lt;actors&gt;.*?)&lt;/p&gt;[\s\S]*?&lt;p&gt;导演：&lt;font class="highlight"&gt;&lt;/font&gt;(?&lt;director&gt;.*?)&lt;/p&gt;[\s\S]*?&lt;dd&gt;年份：&lt;a .*?&gt;(?&lt;publicyear&gt;.*?)&lt;/a&gt;&lt;/dd&gt;</ListInfoRule>
+  <InfoRule>&lt;em id='specialID'&gt;《(?&lt;title&gt;.*?)》&lt;/em&gt;[\s\S]*?&lt;div id="introID"&gt;[\s]*?&lt;p&gt;(?&lt;intro&gt;[\s\S]*?)&lt;/p&gt;[\s\S]*?var VRS_DIRECTOR="(?&lt;director&gt;.*?)";[\s\S]*?var VRS_CATEGORY="(?&lt;tags&gt;.*?)";[\s\S]*?var VRS_ACTOR="(?&lt;actors&gt;.*?)";[\s\S]*?var VRS_AREA="(?&lt;location&gt;.*?)";[\s\S]*? var VRS_PLAY_YEAR="(?&lt;publicyear&gt;.*?)";</InfoRule>
+  <KuaibAreaRule>&lt;!--QVOD播放器--&gt;(?&lt;key&gt;[\s\S]*?)&lt;!--QVOD播放器--&gt;</KuaibAreaRule>
+  <BaiduAreaRule />
+  <KuaibDramaRule>&lt;param name='URL' value='(?&lt;url&gt;.*?)'&gt;</KuaibDramaRule>
+  <BaiduDramaRule />
+  <DramaPageKuaibRule />
+  <DramaPageBaiduRule />
+  <SourceKuaibRule />
+  <SourceBaiduRule />
+</MovieRule>
