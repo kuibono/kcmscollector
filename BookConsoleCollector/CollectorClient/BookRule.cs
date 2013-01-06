@@ -67,7 +67,7 @@ namespace CollectorClient
             var result = new List<BookRule>();
 
             DirectoryInfo dir = new DirectoryInfo(System.AppDomain.CurrentDomain.BaseDirectory + "Config");
-            foreach (var file in dir.GetFiles())
+            foreach (var file in dir.GetFiles("*.xml"))
             {
                 var r = (BookRule)XML.DeSerialize(typeof(BookRule), Voodoo.IO.File.Read(file.FullName));
                 result.Add(r);

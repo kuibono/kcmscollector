@@ -61,15 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TitleHelper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Voodoo\Voodoo.csproj">
-      <Project>{CF4C09DC-B002-4A0D-856B-DCD5E3719213}</Project>
-      <Name>Voodoo</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Config\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EntityDeploy Include="Data\NovelData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -78,6 +70,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\voodoo\Voodoo.csproj">
+      <Project>{cf4c09dc-b002-4a0d-856b-dcd5e3719213}</Project>
+      <Name>Voodoo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\blacklist.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\无错小说网全本小说.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
