@@ -14,8 +14,10 @@ namespace CollectorClient
             //NewRule();
 
             Collect c = new Collect();
-            c.FechRules();
-
+            while (true)
+            {
+                c.FechRules();
+            }
         }
 
         static void NewRule()

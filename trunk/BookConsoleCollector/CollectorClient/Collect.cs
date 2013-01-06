@@ -98,8 +98,18 @@ namespace CollectorClient
                 while (books.Count > 0)
                 {
                     var book = books.First();
+                    
                     try
                     {
+                        if (Common.ContentFilter.GetBlackList().Contains(book.title))
+                        {
+                            red();
+                            w(string.Format("黑名单：{0}", book.title));
+                            white();
+                            books.Remove(book);
+                            continue;
+                        }
+
                         book.url = book.url.AppendToDomain(RootUrl);
                         OpenInfoPage(r, book.url);
                         books.Remove(book);
@@ -109,6 +119,7 @@ namespace CollectorClient
                         red();
                         w(string.Format("打开书籍页面失败：{0}", ex.Message));
                         white();
+                        books.Remove(book);
                     }
                 }
 

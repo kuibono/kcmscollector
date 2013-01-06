@@ -119,5 +119,10 @@ namespace CollectorClient.Common
             return result;
         }
         #endregion
+
+        public static List<string> GetBlackList()
+        {
+            return Voodoo.IO.File.Read(WS.BaseDirectory + "Config\\blacklist.txt").Split('\n').ToList();
+        }
     }
 }
