@@ -235,6 +235,15 @@ namespace CollectorClient
             while (chapters.Count > 0)
             {
                 var chapter = chapters.First();
+
+                using (DataEntities ent = new DataEntities())
+                {
+                    if ((from l in ent.BookChapter where l.ID == CurBook.ID && l.Title == chapter.title select l).Count() > 0)
+                    {
+                        return;//如果这个章节已经存在，则不采集整个书籍
+                    }
+                }
+
                 if (chapter.title.IsNullOrEmpty())
                 {
                     break;
